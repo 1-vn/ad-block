@@ -17,7 +17,7 @@ describe('getFingerprint', function () {
     assert.equal(this.adBlockClient.getFingerprint('*fdasfdsafdas'), 'fdasfd')
   })
   it('Extracts host anchored filter fingerprint', function () {
-    assert.equal(this.adBlockClient.getFingerprint('||brave.com'), 'brave.')
+    assert.equal(this.adBlockClient.getFingerprint('||onevn.com'), 'onevn.')
   })
   it('Does not extract a fingerprint for strings that are too short', function () {
     assert.equal(this.adBlockClient.getFingerprint('prime'), undefined)

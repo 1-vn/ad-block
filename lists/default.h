@@ -47,18 +47,18 @@ const std::vector<FilterList> default_lists = {
     ""
   }, {
     "2FBEB0BC-E2E1-4170-BAA9-05E76AAB5BA5",
-    "https://raw.githubusercontent.com/brave/adblock-lists/master/brave-unbreak.txt", // NOLINT
-    "Brave Unblock",
+    "https://raw.githubusercontent.com/onevn/adblock-lists/master/onevn-unbreak.txt", // NOLINT
+    "OneVN Unblock",
     {},
-    "https://github.com/brave/adblock-lists",
+    "https://github.com/onevn/adblock-lists",
     "",
     ""
   }, {
     "BCDF774A-7845-4121-B7EB-77EB66CEDF84",
-    "https://raw.githubusercontent.com/brave/adblock-lists/master/coin-miners.txt", // NOLINT
+    "https://raw.githubusercontent.com/onevn/adblock-lists/master/coin-miners.txt", // NOLINT
     "NoCoin Filter List",
     {},
-    "https://github.com/brave/adblock-lists",
+    "https://github.com/onevn/adblock-lists",
     "",
     ""
   }

@@ -90,7 +90,7 @@ describe('parsing', function () {
     })
   })
   describe('regex parsing', function () {
-    // See https://github.com/brave/ad-block/issues/173 for details
+    // See https://github.com/onevn/ad-block/issues/173 for details
     it('regex should not check last character of input buffer', function (cb) {
       makeAdBlockClientFromString('/filter1\nfilter2/').then((client) => {
         // regex are considered noFingerprintFilters
@@ -106,7 +106,7 @@ describe('parsing', function () {
         cb()
       })
     })
-    // See https://github.com/brave/ad-block/issues/173 for details
+    // See https://github.com/onevn/ad-block/issues/173 for details
     it('should serialize correctly', function (cb) {
       makeAdBlockClientFromString('/filter1\nfilter2/\n').then((client) => {
         makeAdBlockClientFromString('/filter1\nfilter2/').then((client2) => {

@@ -99,8 +99,8 @@ int main(int argc, char**argv) {
     getFileContents("./test/data/easyprivacy.txt");
   std::string && ublockUnblockTxt =
     getFileContents("./test/data/ublock-unbreak.txt");
-  std::string && braveUnblockTxt =
-    getFileContents("./test/data/brave-unbreak.txt");
+  std::string && onevnUnblockTxt =
+    getFileContents("./test/data/onevn-unbreak.txt");
   std::string && spam404MainBlacklistTxt =
     getFileContents("./test/data/spam404-main-blacklist.txt");
   std::string && disconnectSimpleMalwareTxt =
@@ -111,7 +111,7 @@ int main(int argc, char**argv) {
   adBlockClient.parse(easyListTxt.c_str());
   adBlockClient.parse(easyPrivacyTxt.c_str());
   adBlockClient.parse(ublockUnblockTxt.c_str());
-  adBlockClient.parse(braveUnblockTxt.c_str());
+  adBlockClient.parse(onevnUnblockTxt.c_str());
   std::vector<std::string> checkVector;
   checkVector.push_back(
       "http://pagead2.googlesyndication.com/pagead/show_ads.js");

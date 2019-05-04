@@ -11854,7 +11854,7 @@ _mongo_stats/
 ||analytics.adfreetime.com^
 ||analytics.archive.org^
 ||analytics.bloomberg.com^
-||analytics.brave.com^
+||analytics.onevn.com^
 ||analytics.ecosia.org^
 ||analytics.eip.telegraph.co.uk^
 ||analytics.femalefirst.co.uk^

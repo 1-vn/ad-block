@@ -87,7 +87,7 @@
 ||pdfjs.robwu.nl
 ! Allow 1P piwik since it's no different than server logs
 @@https://analytics.*/piwik.$~third-party
-! Fix for Suicide Prevention Lifeline Chat (brave/brave-browser#3492)
+! Fix for Suicide Prevention Lifeline Chat (onevn/onevn-browser#3492)
 @@||geoplugin.net/javascript.gp$script,xmlhttprequest,domain=suicidepreventionlifeline.org
 ! Block additional trackers
 ||sp1.nypost.com$third-party

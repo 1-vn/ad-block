@@ -32,8 +32,8 @@ const filterStringToFilterOption = (val) => FilterOptions[val]
 commander
   .option('-u, --uuid [uuid]', 'UUID of the list to use')
   .option('-d, --dat [dat]', 'file path of the adblock .dat file')
-  .option('-f, --filter [filter]', 'Brave filter rules')
-  .option('-F, --filter-path [filterPath]', 'Brave filter rules file path')
+  .option('-f, --filter [filter]', 'OneVN filter rules')
+  .option('-F, --filter-path [filterPath]', 'OneVN filter rules file path')
   .option('-w, --http [http]', 'Web filter to use')
   .option('-h, --host [host]', 'host of the page that is being loaded')
   .option('-l, --location [location]', 'URL to use for the check')

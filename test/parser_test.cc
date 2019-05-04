@@ -375,21 +375,21 @@ TEST(client, tagTests) {
   CHECK(checkMatch("adv$tag=stuff\n"
                    "somelongpath/test$tag=stuff\n"
                    "||brianbondy.com/$tag=brian\n"
-                   "||brave.com$tag=brian", {}, {
+                   "||onevn.com$tag=brian", {}, {
     "http://example.com/advert.html",
     "http://example.com/somelongpath/test/2.html",
     "https://brianbondy.com/about",
-    "https://brave.com/about"
+    "https://onevn.com/about"
   }, {}));
   // A matching tag should match a tagged filter
   CHECK(checkMatch("adv$tag=stuff\n"
                    "somelongpath/test$tag=stuff\n"
                    "||brianbondy.com/$tag=brian\n"
-                   "||brave.com$tag=brian", {
+                   "||onevn.com$tag=brian", {
     "http://example.com/advert.html",
     "http://example.com/somelongpath/test/2.html",
     "https://brianbondy.com/about",
-    "https://brave.com/about"
+    "https://onevn.com/about"
   }, {}, {
     "stuff", "brian"
   }));
@@ -397,12 +397,12 @@ TEST(client, tagTests) {
   CHECK(checkMatch("adv$tag=stuff\n"
                    "somelongpath/test$tag=stuff\n"
                    "||brianbondy.com/$tag=brian\n"
-                   "||brave.com$tag=brian", {
+                   "||onevn.com$tag=brian", {
   }, {
     "http://example.com/advert.html",
     "http://example.com/somelongpath/test/2.html",
     "https://brianbondy.com/about",
-    "https://brave.com/about"
+    "https://onevn.com/about"
   }, {
     "filtertag1", "filtertag2"
   }));
@@ -647,7 +647,7 @@ struct ListCounts {
 ListCounts easyList = { 36343, 32667, 0, 5179 };
 ListCounts easyPrivacy = { 15144, 0, 0, 1202 };
 ListCounts ublockUnbreak = { 133, 106, 0, 494 };
-ListCounts braveUnbreak = { 79, 0, 0, 32 };
+ListCounts onevnUnbreak = { 79, 0, 0, 32 };
 ListCounts disconnectSimpleMalware = { 2450, 0, 0, 0 };
 ListCounts spam404MainBlacklist = { 5629, 166, 0, 0 };
 
@@ -720,10 +720,10 @@ TEST(client, parse_ublock_unbreak) {
         ublockUnbreak.exceptions));
 }
 
-// Should parse brave-unbreak list without failing
-TEST(client, parse_brave_unbreak) {
+// Should parse onevn-unbreak list without failing
+TEST(client, parse_onevn_unbreak) {
   string && fileContents = // NOLINT
-    getFileContents("./test/data/brave-unbreak.txt");
+    getFileContents("./test/data/onevn-unbreak.txt");
   AdBlockClient client;
   client.parse(fileContents.c_str());
 
@@ -732,19 +732,19 @@ TEST(client, parse_brave_unbreak) {
           client.numNoFingerprintDomainOnlyFilters +
           client.numNoFingerprintAntiDomainOnlyFilters +
           client.hostAnchoredHashSet->GetSize(),
-        braveUnbreak.filters));
-  CHECK(compareNums(client.numCosmeticFilters, braveUnbreak.cosmeticFilters));
-  CHECK(compareNums(client.numHtmlFilters, braveUnbreak.htmlFilters));
+        onevnUnbreak.filters));
+  CHECK(compareNums(client.numCosmeticFilters, onevnUnbreak.cosmeticFilters));
+  CHECK(compareNums(client.numHtmlFilters, onevnUnbreak.htmlFilters));
   CHECK(compareNums(client.numExceptionFilters +
           client.numNoFingerprintExceptionFilters +
           client.numNoFingerprintDomainOnlyExceptionFilters +
           client.numNoFingerprintAntiDomainOnlyExceptionFilters +
           client.hostAnchoredExceptionHashSet->GetSize(),
-        braveUnbreak.exceptions));
+        onevnUnbreak.exceptions));
 }
 
 // Should parse disconnect-simple-malware.txt list without failing
-TEST(client, parse_brave_disconnect_simple_malware) {
+TEST(client, parse_onevn_disconnect_simple_malware) {
   string && fileContents = // NOLINT
     getFileContents("./test/data/disconnect-simple-malware.txt");
   AdBlockClient client;
@@ -809,14 +809,14 @@ TEST(client, parse_multiList) {
   string && fileContentsUblockUnbreak = // NOLINT
     getFileContents("./test/data/ublock-unbreak.txt");
 
-  string && fileContentsBraveUnbreak = // NOLINT
-    getFileContents("./test/data/brave-unbreak.txt");
+  string && fileContentsOneVNUnbreak = // NOLINT
+    getFileContents("./test/data/onevn-unbreak.txt");
 
   AdBlockClient client;
   client.parse(fileContentsEasylist.c_str());
   client.parse(fileContentsEasyPrivacy.c_str());
   client.parse(fileContentsUblockUnbreak.c_str());
-  client.parse(fileContentsBraveUnbreak.c_str());
+  client.parse(fileContentsOneVNUnbreak.c_str());
 
   // I think counts are slightly off due to same rule hash set
 
@@ -829,19 +829,19 @@ TEST(client, parse_multiList) {
         easyList.filters +
           easyPrivacy.filters +
           ublockUnbreak.filters +
-          braveUnbreak.filters));
+          onevnUnbreak.filters));
           */
   CHECK(compareNums(client.numCosmeticFilters,
         easyList.cosmeticFilters +
           easyPrivacy.cosmeticFilters +
           ublockUnbreak.cosmeticFilters +
-          braveUnbreak.cosmeticFilters));
+          onevnUnbreak.cosmeticFilters));
 
   CHECK(compareNums(client.numHtmlFilters,
         easyList.htmlFilters+
           easyPrivacy.htmlFilters+
           ublockUnbreak.htmlFilters +
-          braveUnbreak.htmlFilters));
+          onevnUnbreak.htmlFilters));
   /*
   CHECK(compareNums(client.numExceptionFilters +
           client.hostAnchoredExceptionHashSet->GetSize() +
@@ -851,7 +851,7 @@ TEST(client, parse_multiList) {
         easyList.exceptions +
           easyPrivacy.exceptions +
           ublockUnbreak.exceptions +
-          braveUnbreak.exceptions));
+          onevnUnbreak.exceptions));
   */
 }
 

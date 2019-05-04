@@ -404,7 +404,7 @@ describe('matching', function () {
     describe('Three level deep rules', function () {
       before(function () {
         this.client = new AdBlockClient()
-        this.client.parse('wp-content/$domain=example.com|~brave.example.com|foo.brave.example.com')
+        this.client.parse('wp-content/$domain=example.com|~onevn.example.com|foo.onevn.example.com')
       })
       it('for test URL of unrelated domain should not match', function () {
         assert(!this.client.matches('https://www.sportsnet.ca/wp-content/plugins',
@@ -416,17 +416,17 @@ describe('matching', function () {
       })
       it('for test URL of exception subdomain should allow', function () {
         assert(!this.client.matches('https://www.sportsnet.ca/wp-content/plugins',
-          FilterOptions.image, 'brave.example.com'))
+          FilterOptions.image, 'onevn.example.com'))
       })
       it('for test URL of deeper subdomain should block', function () {
         assert(this.client.matches('https://www.sportsnet.ca/wp-content/plugins',
-          FilterOptions.image, 'foo.brave.example.com'))
+          FilterOptions.image, 'foo.onevn.example.com'))
       })
     })
     describe('Three level deep rules reversed', function () {
       before(function () {
         this.client = new AdBlockClient()
-        this.client.parse('wp-content/$domain=~example.com|brave.example.com|~foo.brave.example.com')
+        this.client.parse('wp-content/$domain=~example.com|onevn.example.com|~foo.onevn.example.com')
       })
       it('for test URL of unrelated domain should not match since there is a blocking domain', function () {
         assert(!this.client.matches('https://www.sportsnet.ca/wp-content/plugins',
@@ -438,37 +438,37 @@ describe('matching', function () {
       })
       it('for test URL of exception subdomain should block', function () {
         assert(this.client.matches('https://www.sportsnet.ca/wp-content/plugins',
-          FilterOptions.image, 'brave.example.com'))
+          FilterOptions.image, 'onevn.example.com'))
       })
       it('for test URL of deeper subdomain should allow', function () {
         assert(!this.client.matches('https://www.sportsnet.ca/wp-content/plugins',
-          FilterOptions.image, 'foo.brave.example.com'))
+          FilterOptions.image, 'foo.onevn.example.com'))
       })
     })
 
     describe('first-party host', function () {
       before(function () {
         this.client = new AdBlockClient()
-        this.client.parse('analytics.brave.com^\n@@https://analytics.*/piwik.$~third-party')
+        this.client.parse('analytics.onevn.com^\n@@https://analytics.*/piwik.$~third-party')
       })
       it('for same host finds exception', function () {
-        assert(!this.client.matches('https://analytics.brave.com/piwik.js',
-          FilterOptions.image, 'analytics.brave.com'))
+        assert(!this.client.matches('https://analytics.onevn.com/piwik.js',
+          FilterOptions.image, 'analytics.onevn.com'))
       })
       it('for same diff host does not find exception', function () {
-        assert(this.client.matches('https://analytics.brave.com/piwik.js',
+        assert(this.client.matches('https://analytics.onevn.com/piwik.js',
           FilterOptions.image, 'batcommunity.org'))
       })
       it('findMatchingFilters for same host finds exception', function () {
-        const queryResult = this.client.findMatchingFilters('https://analytics.brave.com/piwik.js', FilterOptions.script, 'analytics.brave.com')
+        const queryResult = this.client.findMatchingFilters('https://analytics.onevn.com/piwik.js', FilterOptions.script, 'analytics.onevn.com')
         assert.equal(queryResult.matches, false)
-        assert.equal(queryResult.matchingFilter, 'analytics.brave.com^')
+        assert.equal(queryResult.matchingFilter, 'analytics.onevn.com^')
         assert.equal(queryResult.matchingExceptionFilter, 'https://analytics.*/piwik.')
       })
       it('findMatchingFilters for same diff host does not find exception', function () {
-        const queryResult = this.client.findMatchingFilters('https://analytics.brave.com/piwik.js', FilterOptions.script, 'batcommunity.org')
+        const queryResult = this.client.findMatchingFilters('https://analytics.onevn.com/piwik.js', FilterOptions.script, 'batcommunity.org')
         assert.equal(queryResult.matches, true)
-        assert.equal(queryResult.matchingFilter, 'analytics.brave.com^')
+        assert.equal(queryResult.matchingFilter, 'analytics.onevn.com^')
       })
     })
   })

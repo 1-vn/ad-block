@@ -6,7 +6,7 @@ const {AdBlockClient, FilterOptions} = require('..')
 const path = require('path')
 const fs = require('fs')
 const request = require('request')
-const braveUnbreakPath = './test/data/brave-unbreak.txt'
+const onevnUnbreakPath = './test/data/onevn-unbreak.txt'
 const {getListBufferFromURL, getListFilterFunction} = require('../lib/util')
 const {adBlockLists} = require('..')
 
@@ -47,11 +47,11 @@ const generateDataFileFromURL = (listURL, outputDATFilename, filter) => {
         reject()
         return
       }
-      const braveUnbreakBody = fs.readFileSync(braveUnbreakPath, 'utf8')
+      const onevnUnbreakBody = fs.readFileSync(onevnUnbreakPath, 'utf8')
       if (filter) {
         body = filter(body)
       }
-      generateDataFileFromString([body, braveUnbreakBody], outputDATFilename)
+      generateDataFileFromString([body, onevnUnbreakBody], outputDATFilename)
       resolve()
     })
   })

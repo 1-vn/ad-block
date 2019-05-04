@@ -29,7 +29,7 @@ source_set("ad-block") {
   ]
 
   deps = [
-    rebase_path("hashset-cpp/brave:hashset-cpp", dep_base),
-    rebase_path("bloom-filter-cpp/brave:bloom-filter-cpp", dep_base),
+    rebase_path("hashset-cpp/onevn:hashset-cpp", dep_base),
+    rebase_path("bloom-filter-cpp/onevn:bloom-filter-cpp", dep_base),
   ]
 }

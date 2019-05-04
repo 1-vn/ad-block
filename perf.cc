@@ -72,8 +72,8 @@ int main(int argc, char**argv) {
     getFileContents("./test/data/easylist.txt");
   std::string && easyPrivacyTxt =
     getFileContents("./test/data/easyprivacy.txt");
-  std::string && braveUnblockTxt =
-    getFileContents("./test/data/brave-unbreak.txt");
+  std::string && onevnUnblockTxt =
+    getFileContents("./test/data/onevn-unbreak.txt");
   std::string && ublockUnblockTxt =
     getFileContents("./test/data/ublock-unbreak.txt");
   std::string && spam404MainBlacklistTxt =
@@ -91,7 +91,7 @@ int main(int argc, char**argv) {
   adBlockClient.parse(easyListTxt.c_str());
   adBlockClient.parse(easyPrivacyTxt.c_str());
   adBlockClient.parse(ublockUnblockTxt.c_str());
-  adBlockClient.parse(braveUnblockTxt.c_str());
+  adBlockClient.parse(onevnUnblockTxt.c_str());
   int size;
   char* data = adBlockClient.serialize(&size);
   adBlockClient.deserialize(data);
@@ -118,7 +118,7 @@ int main(int argc, char**argv) {
   allClient.parse(easyListTxt.c_str());
   allClient.parse(easyPrivacyTxt.c_str());
   allClient.parse(ublockUnblockTxt.c_str());
-  allClient.parse(braveUnblockTxt.c_str());
+  allClient.parse(onevnUnblockTxt.c_str());
   allClient.parse(spam404MainBlacklistTxt.c_str());
   allClient.parse(disconnectSimpleMalwareTxt.c_str());
   doSiteList(&allClient, false);

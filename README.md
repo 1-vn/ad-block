@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/brave/ad-block.svg?branch=master)](https://travis-ci.org/brave/ad-block)
+[![Build Status](https://travis-ci.org/onevn/ad-block.svg?branch=master)](https://travis-ci.org/onevn/ad-block)
 
-# Brave Ad Block
+# OneVN Ad Block
 
 Native node module, and C++ library for Adblock Plus filter parsing for lists like EasyList.
 
@@ -13,9 +13,9 @@ This project supports almost all of the
 some rule formats specific to other projects, like [uBlock](https://github.com/gorhill/uBlock/)
 and [AdGuard](https://adguard.com/en/welcome.html). For more details on
 what rule formats are supported, please see 
- [compatibility wiki page](https://github.com/brave/ad-block/wiki/Filter-List-Format-Compatibility).
+ [compatibility wiki page](https://github.com/onevn/ad-block/wiki/Filter-List-Format-Compatibility).
 
-## To include brave/ad-block in your project:
+## To include onevn/ad-block in your project:
 
 ```
 npm install --save ad-block
@@ -138,11 +138,11 @@ int main(int argc, char**argv) {
   `node scripts/check.js  --host www.cnet.com --list ./test/data/sitelist.txt --discover`
 
 
-## Developing brave/ad-block
+## Developing onevn/ad-block
 
 1. Clone the git repository from GitHub:
 
-    `git clone --recursive https://github.com/brave/ad-block`
+    `git clone --recursive https://github.com/onevn/ad-block`
 
 2. Open the working directory:
 

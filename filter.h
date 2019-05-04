@@ -197,7 +197,7 @@ friend class AdBlockClient;
   int dataLen;
   char *domainList;
   // A filter tag is used for identifying and tagally including
-  // certain filters in Brave.
+  // certain filters in OneVN.
   char *tag;
   int tagLen;
   char *host;

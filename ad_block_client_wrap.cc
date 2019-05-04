@@ -85,11 +85,11 @@ void GenerateManifestFile(const std::string &name,
   std::ofstream outFile(filename);
   if (outFile.is_open()) {
     outFile << "{" << std::endl;
-    outFile << "  \"description\": \"Brave Ad Block Updater extension\","
+    outFile << "  \"description\": \"OneVN Ad Block Updater extension\","
       << std::endl;
     outFile << "  \"key\": \"" << base64_public_key << "\"," << std::endl;
     outFile << "  \"manifest_version\": 2," << std::endl;
-    outFile << "  \"name\": \"Brave Ad Block Updater (" << name << ")\","
+    outFile << "  \"name\": \"OneVN Ad Block Updater (" << name << ")\","
       << std::endl;
     outFile << "  \"version\": \"0.0.0\"" << std::endl;
     outFile << "}" << std::endl;
