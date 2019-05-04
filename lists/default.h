@@ -50,7 +50,7 @@ const std::vector<FilterList> default_lists = {
     "https://raw.githubusercontent.com/onevn/adblock-lists/master/onevn-unbreak.txt", // NOLINT
     "OneVN Unblock",
     {},
-    "https://github.com/onevn/adblock-lists",
+    "https://github.com/1-vn/adblock-lists",
     "",
     ""
   }, {
@@ -58,7 +58,7 @@ const std::vector<FilterList> default_lists = {
     "https://raw.githubusercontent.com/onevn/adblock-lists/master/coin-miners.txt", // NOLINT
     "NoCoin Filter List",
     {},
-    "https://github.com/onevn/adblock-lists",
+    "https://github.com/1-vn/adblock-lists",
     "",
     ""
   }

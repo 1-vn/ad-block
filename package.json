@@ -40,15 +40,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/onevn/ad-block.git"
+    "url": "git+https://github.com/1-vn/ad-block.git"
   },
   "author": "Brian R. Bondy <netzen@gmail.com> (http://www.brianbondy.com)",
   "license": "MPL-2.0",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/onevn/ad-block/issues"
+    "url": "https://github.com/1-vn/ad-block/issues"
   },
-  "homepage": "https://github.com/onevn/ad-block#readme",
+  "homepage": "https://github.com/1-vn/ad-block#readme",
   "pre-commit": [
     "lint-cpp",
     "lint-js"

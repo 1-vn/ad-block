@@ -13,7 +13,7 @@ This project supports almost all of the
 some rule formats specific to other projects, like [uBlock](https://github.com/gorhill/uBlock/)
 and [AdGuard](https://adguard.com/en/welcome.html). For more details on
 what rule formats are supported, please see 
- [compatibility wiki page](https://github.com/onevn/ad-block/wiki/Filter-List-Format-Compatibility).
+ [compatibility wiki page](https://github.com/1-vn/ad-block/wiki/Filter-List-Format-Compatibility).
 
 ## To include onevn/ad-block in your project:
 
@@ -142,7 +142,7 @@ int main(int argc, char**argv) {
 
 1. Clone the git repository from GitHub:
 
-    `git clone --recursive https://github.com/onevn/ad-block`
+    `git clone --recursive https://github.com/1-vn/ad-block`
 
 2. Open the working directory:
 
